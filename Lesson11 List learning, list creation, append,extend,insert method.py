@@ -7,7 +7,7 @@ normalList = ['xD','nope','hi']
 print(normalList);
 
 #mixed list
-mixedList = ['AragakiYui',29,True,1.70]
+mixedList = ['AragakiYui',29,True,1.70,[1988,6,1]]
 print(mixedList)
 
 #empty list
