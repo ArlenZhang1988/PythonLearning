@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>DramaCentraTheatre</title>
+
+<link rel="stylesheet" type="text/css" href="CSS/Main.css">
+
+</head>
+
+<script >
+
+var videoNameArray = ["Test","Test2"];
+var videoArray =['Media/Videos/test.mp4',"Media/Videos/test2.mp4"];
+var videoIndex = 0;
+
+
+
+function ChangeVideo(elementID)
+{	
+	if(	videoNameID = "VideoNameRight")
+	{
+		videoIndex++;
+	}else
+	{
+		videoIndex--;
+	}
+	
+	CheckRange();
+	
+	document.getElementById(elementID).src = videoArray[videoIndex];
+	document.getElementById(elementID).load();
+	document.getElementById("VideoTittle").innerHTML = videoNameArray[videoIndex];
+}
+
+function CheckRange()
+{
+	if(videoIndex>videoNameArray.length-1)
+	{
+		videoIndex = 0;
+	}
+	else if(videoIndex < 0)
+	{
+		videoIndex = videoArray.length-1;
+	}
+}
+
+    function ToHomePage(link){
+        window.location=link;
+    }
+</script>
+
+<body>
+<div class="Header">
+
+<header> 
+<a href="#" ><img id="logo" src="Media/logo.png"/></a>	
+<nav class="Navigation">
+        <div class="dropdown">
+			<button class="dropbtn-selected", onclick="ToHomePage('HomePage.html');">Home</button>
+		</div>
+		
+        <div class="dropdown">
+			<button class="dropbtn", onclick="ToHomePage('ShowsPage.html');">Shows</button>
+		</div>
+		
+        <div class="dropdown">
+			<button class="dropbtn">Art Gallery</button>
+				<div class="dropdown-content">
+					<a href="#">Photo Gallery</a>
+					<a href="#">Animation Page</a> 
+				</div>
+		</div>
+		
+		<div class="dropdown">
+			<button class="dropbtn">News</button>
+		</div>
+		
+		<div class="dropdown">
+			<button class="dropbtn">About Us</button>
+				<div class="dropdown-content">
+					<a href="#">History</a>
+					<a href="#">Members</a>
+				</div>
+		</div>
+		
+		        <div class="dropdown">
+			<button class="dropbtn">FAQs</button>
+		</div>
+</nav>
+</header>
+</div>
+
+<div class = "Content">
+
+	<div class="VideoContainer">
+	
+	<div class="ButtonAlign" >
+	<button class = "VideoButton" onclick='ChangeVideo("Video")' ><img src="Media/arrow_toLeft.png";width="100"; height="35" >
+		<p id="VideoNameLeft"> Pre</p>
+		</button>
+	</div>
+
+	<video id="Video" width=95% height=95% controls>
+	<source  src="Media/Videos/test.mp4" type="video/mp4">
+	</video>
+
+	<div class="ButtonAlign">
+	<button class = "VideoButton" onclick='ChangeVideo("Video")' ><img src="Media/arrow.png";width="100"; height="35" >
+		<p id="VideoNameRight"> Next</p>
+	</button>
+	</div>
+	</div>
+	
+	<center>
+	<div id="VideoTittle" class="VideoTittle">
+		Test
+	</div>
+	</center>
+	
+</div>
+
+<footer>
+	<div class="FooterLeft">
+			<a href="#">Row Codes</a> 
+			<span> | </span>
+			<a href="#">References</a> 
+	</div> 
+	
+	<div class="FooterRight">
+		<a href="#"><img id="logo" src="Media/logo.png"/></a>	
+	</div>
+	
+	<div class="FooterMiddle">
+		<a> Copy right @ 2017</a>		
+	</div>
+</footer>
+
+<div>
+
+</div>
+</body>
+</html>
